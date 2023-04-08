@@ -1,8 +1,10 @@
-export default function Home() {
+import { Home } from '@/components/HomePage'
+
+export default function HomePage() {
   return (
-    <>
-      <h1 className="text-2xl font-bold">Hello CodeLeap</h1>
-      <p className="text-lg">First paragraph</p>
-    </>
+    <div className="max-w-[80rem] mx-auto">
+      <Home.Hero />
+      <Home.Register />
+    </div>
   )
 }
