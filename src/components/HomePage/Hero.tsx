@@ -2,7 +2,7 @@ import Image from 'next/image'
 import logo from '@/assets/logo.svg'
 import { CaretDown } from '@phosphor-icons/react'
 
-export const Hero = () => {
+export function Hero() {
   return (
     <section className="h-screen flex items-center justify-center px-4">
       <Image

@@ -1,6 +1,6 @@
 import { GithubLogo } from '@phosphor-icons/react'
 
-export const Footer = () => {
+export function Footer() {
   return (
     <div className="w-full flex items-center justify-center py-4">
       <a
