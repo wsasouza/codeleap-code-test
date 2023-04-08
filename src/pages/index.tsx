@@ -5,6 +5,7 @@ export default function HomePage() {
     <div className="max-w-[80rem] mx-auto">
       <Home.Hero />
       <Home.Register />
+      <Home.Footer />
     </div>
   )
 }
