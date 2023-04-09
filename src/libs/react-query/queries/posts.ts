@@ -1,23 +1,9 @@
 import { useQuery } from '@tanstack/react-query'
 import { api } from '@/libs/services/api'
-
-export type Post = {
-  id: number
-  username: string
-  title: string
-  content: string
-  created_datetime: string
-}
-
-export type PostsData = {
-  count: number
-  next: string | null
-  previous: string | null
-  results: Post[]
-}
+import { PostsData } from '@/@types/types'
 
 async function getPosts() {
-  const { data } = await api.get<PostsData>('/careers/?limit=10')
+  const { data } = await api.get<PostsData>('/careers/?limit=20')
 
   return data
 }
