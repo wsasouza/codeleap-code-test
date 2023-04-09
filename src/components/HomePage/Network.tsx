@@ -1,5 +1,6 @@
 import useUsernameStore from '@/libs/store/useUsernameStore'
 import { Power } from '@phosphor-icons/react'
+import { Post } from '../Post'
 
 interface NetworkProps {
   username: string
@@ -7,6 +8,15 @@ interface NetworkProps {
 
 export function Network({ username }: NetworkProps) {
   const unregister = useUsernameStore((state) => state.removeUsername)
+
+  const post = {
+    id: 2573,
+    username: 'Walter',
+    created_datetime: '2023-04-08T11:06:17.878963Z',
+    title: 'First Post',
+    content:
+      'Curabitur suscipit suscipit tellus. Phasellus consectetuer vestibulum elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas egestas arcu quis ligula mattis placerat. Duis vel nibh at velit scelerisque suscipitt',
+  }
 
   return (
     <section className="h-screen w-full bg-zinc-100 ">
@@ -25,8 +35,8 @@ export function Network({ username }: NetworkProps) {
           </button>
         </div>
       </header>
-      <div className="max-h-[51.6rem] h-full max-w-[50rem] bg-white mx-auto  rounded-b-2xl scroll-auto">
-        <h1>Teste</h1>
+      <div className="max-h-[51.6rem] h-full max-w-[50rem] bg-white mx-auto  rounded-b-2xl overflow-hidden">
+        <Post.Card post={post} />
       </div>
     </section>
   )
