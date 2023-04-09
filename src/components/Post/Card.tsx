@@ -27,7 +27,7 @@ export function Card({ post }: CardProps) {
   )
 
   return (
-    <div className="w-full max-w-[48rem] bg-slate-100 mx-auto mt-6 rounded-2xl">
+    <div className="w-full max-w-[48rem] mx-auto mt-6 border border-accent rounded-2xl">
       <header className="w-full bg-accent rounded-t-2xl h-[4.375rem] flex items-center px-6">
         <h2 className="text-[22px] text-white font-bold">{post.title}</h2>
       </header>

@@ -7,10 +7,16 @@ export default function HomePage() {
   return (
     <>
       <Home.Hero />
-      <div id="app">
-        {username ? <Home.Network username={username} /> : <Home.Register />}
+      <div id="app" className="relative">
+        {username ? (
+          <Home.Network username={username} />
+        ) : (
+          <>
+            <Home.Register />
+            <Home.Footer />
+          </>
+        )}
       </div>
-      <Home.Footer />
     </>
   )
 }

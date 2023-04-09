@@ -19,8 +19,8 @@ export function Network({ username }: NetworkProps) {
   }
 
   return (
-    <section className="h-screen w-full bg-zinc-100 ">
-      <header className="w-full bg-accent">
+    <section className="h-screen w-full bg-zinc-100">
+      <header className="w-full bg-accent sticky top-0 shadow-lg">
         <div className="px-4 h-20 max-w-[50rem] flex items-center justify-between mx-auto">
           <h1 className="font-bold text-white text-lg lg:text-[22px]">
             Codeleap Network
