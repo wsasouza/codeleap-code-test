@@ -14,7 +14,7 @@ export function Hero() {
         className="w-full max-w-[38rem] object-fit"
       />
       <a
-        href="#register"
+        href="#app"
         className="leading-none absolute bottom-6 p-4 rounded-full hover:bg-zinc-200 animate-bounce"
       >
         <CaretDown size={38} weight="bold" />

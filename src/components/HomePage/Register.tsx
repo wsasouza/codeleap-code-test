@@ -2,6 +2,7 @@ import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Form } from '../Form'
 import { FormProvider, useForm } from 'react-hook-form'
+import useUsernameStore from '@/libs/store/useUsernameStore'
 
 const registerSchema = z.object({
   username: z
@@ -26,19 +27,18 @@ export function Register() {
     resolver: zodResolver(registerSchema),
   })
 
+  const updateUsername = useUsernameStore((state) => state.addUsername)
+
   const { handleSubmit, watch } = registerForm
 
   const isText = watch('username')
 
   function handleRegisterNewUsername(data: registerData) {
-    console.log(data)
+    updateUsername(data.username)
   }
 
   return (
-    <section
-      id="register"
-      className="h-screen bg-zinc-200 flex items-center justify-center rounded-2xl shadow-lg mb-4"
-    >
+    <div className="h-screen bg-zinc-200 flex items-center justify-center rounded-2xl shadow-lg mb-4">
       <div className="bg-white w-full max-w-[31.25rem] p-6 flex flex-col rounded-2xl">
         <h1 className="font-bold text-[22px] mb-6">
           Welcome to CodeLeap network!
@@ -61,6 +61,6 @@ export function Register() {
           </form>
         </FormProvider>
       </div>
-    </section>
+    </div>
   )
 }

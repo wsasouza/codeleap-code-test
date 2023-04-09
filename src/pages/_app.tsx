@@ -1,6 +1,6 @@
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
-import { Roboto } from '@next/font/google'
+import { Roboto } from "next/font/google"
 import Head from 'next/head'
 
 const roboto = Roboto({
