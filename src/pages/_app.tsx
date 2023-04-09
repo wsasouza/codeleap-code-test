@@ -2,6 +2,8 @@ import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 import { Roboto } from 'next/font/google'
 import Head from 'next/head'
+import { QueryClientProvider } from '@tanstack/react-query'
+import queryClient from '@/libs/services/queryClient'
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -14,9 +16,11 @@ export default function App({ Component, pageProps }: AppProps) {
       <Head>
         <title>CodeLeap | Code Test</title>
       </Head>
-      <main className={roboto.className}>
-        <Component {...pageProps} />
-      </main>
+      <QueryClientProvider client={queryClient}>
+        <main className={roboto.className}>
+          <Component {...pageProps} />
+        </main>
+      </QueryClientProvider>
     </>
   )
 }

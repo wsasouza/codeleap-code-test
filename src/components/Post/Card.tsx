@@ -31,8 +31,8 @@ export function Card({ post }: CardProps) {
       <header className="w-full bg-accent rounded-t-2xl h-[4.375rem] flex items-center px-6">
         <h2 className="text-[22px] text-white font-bold">{post.title}</h2>
       </header>
-      <div className="p-6 flex items-center justify-between text-zinc-500 text-lg">
-        <span className="font-bold ">@{post.username}</span>
+      <div className="p-6 flex items-center gap-4 justify-between text-zinc-500 text-lg">
+        <span className="font-bold truncate ...">@{post.username}</span>
         <time
           title={publishedDateFormatted}
           dateTime={new Date(post.created_datetime).toISOString()}
@@ -40,9 +40,7 @@ export function Card({ post }: CardProps) {
           {publishedDateRelativeToNow}
         </time>
       </div>
-      <div className="px-6 pb-6 space-y-4">
-        <p>{post.content}</p>
-      </div>
+      <div className="px-6 pb-6 w-full">{post.content}</div>
     </div>
   )
 }
