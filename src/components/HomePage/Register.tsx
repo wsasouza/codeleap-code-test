@@ -38,7 +38,7 @@ export function Register() {
   }
 
   return (
-    <div className="h-screen bg-zinc-200 flex items-center justify-center rounded-2xl shadow-lg mb-4">
+    <div className="h-screen bg-zinc-200 flex items-center justify-center rounded-2xl shadow-xl pb-4">
       <div className="bg-white w-full max-w-[31.25rem] p-6 flex flex-col rounded-2xl">
         <h1 className="font-bold text-[22px] mb-6">
           Welcome to CodeLeap network!
