@@ -12,3 +12,13 @@ export type PostsData = {
   previous: string | null
   results: Post[]
 }
+
+export type UpdateData = {
+  title: string
+  content: string
+}
+
+export interface UpdatePost {
+  id: number
+  updatePost: UpdateData
+}

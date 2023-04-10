@@ -11,7 +11,9 @@ interface NetworkProps {
 
 export function Network({ username }: NetworkProps) {
   const [postEdit, setPostEdit] = useState<PostType | null>()
+  const [postDelete, setPostDelete] = useState<number>(0)
   const [isOpen, setIsOpen] = useState(false)
+  const [isOpenDelete, setIsOpenDelete] = useState(false)
   const [key, setKey] = useState(0)
   const unregister = useUsernameStore((state) => state.removeUsername)
   const { data } = useFetchPosts()
@@ -29,6 +31,20 @@ export function Network({ username }: NetworkProps) {
   function handleEditPost(data: PostType) {
     setPostEdit(data)
     openModal()
+  }
+
+  function closeDeleteModal() {
+    setIsOpenDelete(false)
+  }
+
+  function openModalDelete() {
+    setKey(Math.random())
+    setIsOpenDelete(true)
+  }
+
+  function handleDeletePost(data: number) {
+    setPostDelete(data)
+    openModalDelete()
   }
 
   return (
@@ -66,6 +82,7 @@ export function Network({ username }: NetworkProps) {
                   key={post.id}
                   username={username}
                   handleEdit={handleEditPost}
+                  handleDelete={handleDeletePost}
                 />
               )
             })}
@@ -79,6 +96,15 @@ export function Network({ username }: NetworkProps) {
           isOpen={isOpen}
           username={username}
           post={postEdit}
+        />
+      )}
+
+      {data && (
+        <Post.DeleteModal
+          key={key}
+          closeModal={closeDeleteModal}
+          isOpen={isOpenDelete}
+          id={postDelete}
         />
       )}
     </>

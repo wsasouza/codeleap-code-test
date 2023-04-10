@@ -7,9 +7,10 @@ interface CardProps {
   username: string
   post: Post
   handleEdit: (post: Post) => void
+  handleDelete: (id: number) => void
 }
 
-export function Card({ post, username, handleEdit }: CardProps) {
+export function Card({ post, username, handleEdit, handleDelete }: CardProps) {
   const publishedDateFormatted = format(
     new Date(post.created_datetime),
     "d LLLL 'at' HH:mm",
@@ -36,6 +37,7 @@ export function Card({ post, username, handleEdit }: CardProps) {
               <button
                 type="button"
                 title="Delete Post"
+                onClick={() => handleDelete(post.id)}
                 className="hover:text-accentRed"
               >
                 <Trash size={24} weight="bold" />

@@ -195,7 +195,13 @@ export function CreateOrEditModal({
                         />
                       </Form.Field>
 
-                      <div className="flex justify-end">
+                      <div className="flex items-center gap-4 justify-end">
+                        <Form.Button
+                          type="button"
+                          text="Cancelar"
+                          variant="tertiary"
+                          onClick={handleCloseModal}
+                        />
                         <Form.Button
                           type="submit"
                           text={textButton}
