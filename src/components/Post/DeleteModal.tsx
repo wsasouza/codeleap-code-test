@@ -70,7 +70,9 @@ export function DeleteModal({
                   as="div"
                   className="px-4 py-4 flex items-center justify-between"
                 >
-                  <h2>Are you sure you want to delete this item?</h2>
+                  <h2 className="text-zinc-900 font-bold text-[22px]">
+                    Are you sure you want to delete this item?
+                  </h2>
                   <div className="flex gap-2 items-center">
                     <button
                       onClick={closeModal}
