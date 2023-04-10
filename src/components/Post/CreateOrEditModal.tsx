@@ -11,6 +11,7 @@ import {
   useUpdatePost,
 } from '@/libs/react-query/mutations/posts'
 import { Form } from '../Form'
+import { toast } from 'react-toastify'
 
 interface CreateOrEditModalProps {
   username: string
@@ -90,11 +91,11 @@ export function CreateOrEditModal({
       updatePostMutation.mutate(updateData, {
         onSuccess() {
           queryClient.invalidateQueries(['posts'])
-          // toast.info('Tipo de Ato atualizado com sucesso.')
+          toast.info('Post edited.')
         },
         onError(error) {
           console.log(error)
-          // toast.error('Ocorreu um erro ao editar Tipo de Ato.')
+          toast.error('There was an error editing post.')
         },
       })
     } else {
@@ -107,11 +108,11 @@ export function CreateOrEditModal({
       createNewPostMutation.mutate(newPost, {
         onSuccess() {
           queryClient.invalidateQueries(['posts'])
-          // toast.success('Tipo de Ato criado com sucesso.')
+          toast.success('Post created.')
         },
         onError(error) {
           console.log(error)
-          // toast.error('Ocorreu um erro ao criar Tipo de Ato.')
+          toast.error('There was an error creating post.')
         },
       })
     }

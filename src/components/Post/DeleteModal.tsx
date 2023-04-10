@@ -3,6 +3,7 @@ import { useQueryClient } from '@tanstack/react-query'
 import { Dialog, Transition } from '@headlessui/react'
 import { XCircle } from '@phosphor-icons/react'
 import { useDeletePost } from '@/libs/react-query/mutations/posts'
+import { toast } from 'react-toastify'
 
 import { Form } from '../Form'
 
@@ -28,11 +29,11 @@ export function DeleteModal({
     deletePostMutation.mutate(id, {
       onSuccess() {
         queryClient.invalidateQueries(['posts'])
-        // toast.info('Tipo de Ato atualizado com sucesso.')
+        toast.info('Deleted post.')
       },
       onError(error) {
         console.log(error)
-        // toast.error('Ocorreu um erro ao editar Tipo de Ato.')
+        toast.error('There was an error deleting post.')
       },
     })
 

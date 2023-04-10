@@ -3,7 +3,7 @@ import { api } from '@/libs/services/api'
 import { PostsData } from '@/@types/types'
 
 async function getPosts() {
-  const { data } = await api.get<PostsData>('/careers/?limit=20')
+  const { data } = await api.get<PostsData>('/careers/?limit=30')
 
   return data
 }
