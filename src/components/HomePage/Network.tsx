@@ -51,24 +51,26 @@ export function Network({ username }: NetworkProps) {
     <>
       <section className="h-full w-full bg-zinc-100 relative">
         <header className="w-full bg-accent sticky top-0 shadow-lg z-20">
-          <div className="px-4 h-20 max-w-[50rem] flex items-center justify-between mx-auto">
-            <h1 className="font-bold text-white text-lg lg:text-[22px]">
+          <div className="px-4 h-20 max-w-[50rem] flex items-center justify-between gap-4 mx-auto">
+            <h1 className="font-bold text-white text-md lg:text-[22px]">
               Codeleap Network
             </h1>
             <button
               type="button"
               onClick={openModal}
-              className="flex items-center text-lg lg:text-lg text-white hover:text-accentGreen"
+              className="flex items-center lg:text-lg text-white hover:text-accentGreen"
             >
               <Plus size={32} weight="bold" />
-              <span>New Post</span>
+              <span className="invisible lg:visible">New Post</span>
             </button>
             <button
               type="button"
               onClick={unregister}
-              className="text-zinc-100 flex items-center gap-2 hover:text-accentRed "
+              className="text-zinc-100 flex items-center hover:text-accentRed "
             >
-              <span className="text-md lg:text-lg">{username}</span>
+              <span className="invisible lg:visible lg:text-lg">
+                {username}
+              </span>
               <Power size={28} weight="bold" />
             </button>
           </div>
